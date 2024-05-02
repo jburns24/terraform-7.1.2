@@ -2,7 +2,7 @@ name: 'Terraform Init/Validate/Plan'
 
 on:
   workflow_dispatch:
-  pull_request:
+  push:
     branches:
     - main
 
