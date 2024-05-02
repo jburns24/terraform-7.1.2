@@ -1,10 +1,9 @@
 terraform {
   backend "azurerm" {
-    resource_group_name  = "RG-mcoleman-bootcamp"
-    storage_account_name = "mylesstorage"
-    container_name       = "tfstate-myles"
+    resource_group_name  = "tfstate"
+    storage_account_name = "jburnstesttfstate"
+    container_name       = "test-tfstate"
     key                  = "prod.terraform.tfstate" # Can be passed via `-backend-config=`"key=<blob key name>"` in the `init` command.
-    use_oidc             = true
   }
 
   required_providers {
@@ -24,7 +23,7 @@ provider "azurerm" {
 
 # Create a virtual network
 resource "azurerm_virtual_network" "vnet" {
-  name                = "mcolemanTFVnet"
+  name                = "jburnsTFVnet"
   address_space       = ["10.0.0.0/16"]
   location            = var.location
   resource_group_name = var.resource_group_name
